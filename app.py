@@ -34,7 +34,12 @@ st.set_page_config(page_title="Power Sector Stock Predictions", layout="wide")
 # Extracting the role from the URL parameters using st.query_params
 query_params = st.experimental_get_query_params()
 role = query_params.get("role", ["Investor"])[0]  # Default to 'Investor' if no role is provided
-
+hide_streamlit_style = """
+    <style>
+    .stAlert {display: none;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Custom inline CSS for styling
 st.markdown("""
     <style>
