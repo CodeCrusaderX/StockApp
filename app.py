@@ -6,6 +6,28 @@ import numpy as np
 import plotly.graph_objects as go
 import requests
 warnings.filterwarnings('ignore')
+
+
+def get_news():
+    url = "https://google-news13.p.rapidapi.com/business"
+    
+    querystring = {"lr":"en-US"}
+    
+    headers = {
+    	"x-rapidapi-key": "c1878e1e15msh31897938498ae2cp1bd156jsn44c8a2dc1ea3",
+    	"x-rapidapi-host": "google-news13.p.rapidapi.com"
+    }
+    
+    response = requests.get(url, headers=headers, params=querystring)
+    
+    response = response.json()
+
+    response = response['items']
+    st.markdown('''News!!!''')
+    st.divider()
+    for i in range(5):
+        st.markdown(f"{i+1}.{response[i]['title']}")
+        st.write(f"    {response[i]['snippet']}")
 # Sample Data
 growth_predictions1 = requests.get("https://stockapi-production-7c29.up.railway.app/growth_predictions")
 growth_predictions = {
@@ -112,7 +134,7 @@ def investor_page():
         - It shows the expected percentage growth over different time periods such as 1 day, 1 week, and 1 month.
         - As an investor, this information helps you evaluate sector-wide trends and opportunities for potential investment.
     """)
-
+    get_news()
 
 # Function for Business Owner page
 def business_owner_page():
@@ -135,7 +157,7 @@ def business_owner_page():
         - This graph illustrates company-wise growth predictions for the power sector.
         - Business owners can use this data to analyze competitors' performance and make strategic decisions to grow their own business.
     """)
-
+    get_news()
 
 # Function for Policymaker page with two separated plots
 def policymaker_page():
@@ -179,7 +201,7 @@ def policymaker_page():
         - This graph represents the sector-wide average growth predictions over different time periods.
         - Policymakers can use this information to assess the overall health and progress of the power sector and make informed decisions regarding policy and regulation.
     """)
-
+    get_news()
 
 # Display the corresponding page based on the role in the URL
 if role == "Investor":
