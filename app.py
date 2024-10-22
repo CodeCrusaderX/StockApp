@@ -23,6 +23,7 @@ def get_news():
     response = response.json()
 
     response = response['items']
+    st.divider()
     st.markdown('''News!!!''')
     st.divider()
     for i in range(5):
