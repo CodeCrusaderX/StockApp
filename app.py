@@ -1,9 +1,11 @@
+
+import warnings
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 import requests
-
+warnings.filterwarnings('ignore')
 # Sample Data
 growth_predictions1 = requests.get("https://stockapi-production-7c29.up.railway.app/growth_predictions")
 growth_predictions = {
