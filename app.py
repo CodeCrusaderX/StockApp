@@ -1,11 +1,3 @@
-import subprocess  
-import sys  
-
-def install(package):  
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])  
-
-# Example usage  
-install('plotly')
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -108,7 +100,7 @@ def investor_page():
     st.plotly_chart(fig)
 
     st.markdown("""
-        **Description:**
+        *Description:*
         - This graph displays the average growth predictions for the entire power sector.
         - It shows the expected percentage growth over different time periods such as 1 day, 1 week, and 1 month.
         - As an investor, this information helps you evaluate sector-wide trends and opportunities for potential investment.
@@ -132,7 +124,7 @@ def business_owner_page():
     st.plotly_chart(fig)
 
     st.markdown("""
-        **Description:**
+        *Description:*
         - This graph illustrates company-wise growth predictions for the power sector.
         - Business owners can use this data to analyze competitors' performance and make strategic decisions to grow their own business.
     """)
@@ -157,7 +149,7 @@ def policymaker_page():
     st.plotly_chart(fig1)
 
     st.markdown("""
-        **Description:**
+        *Description:*
         - This graph shows company-specific growth predictions over various time periods (1 day, 1 week, 1 month).
         - Policymakers can use this data to monitor the performance of individual companies and track their progress in the power sector.
     """)
@@ -176,7 +168,7 @@ def policymaker_page():
     st.plotly_chart(fig2)
 
     st.markdown("""
-        **Description:**
+        *Description:*
         - This graph represents the sector-wide average growth predictions over different time periods.
         - Policymakers can use this information to assess the overall health and progress of the power sector and make informed decisions regarding policy and regulation.
     """)
