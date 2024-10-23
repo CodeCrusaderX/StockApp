@@ -9,9 +9,9 @@ warnings.filterwarnings('ignore')
 
 
 def get_news():
-    url = "https://google-news13.p.rapidapi.com/business"
+    url = "https://google-news13.p.rapidapi.com/search"
     
-    querystring = {"lr":"en-US"}
+    querystring = {"keyword":"Indian Power Sector News","lr":"en-US"}
     
     headers = {
     	"x-rapidapi-key": "c1878e1e15msh31897938498ae2cp1bd156jsn44c8a2dc1ea3",
