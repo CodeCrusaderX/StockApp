@@ -14,7 +14,7 @@ def get_news():
     querystring = {"keyword":"Indian Power Sector News","lr":"en-US"}
     
     headers = {
-    	"x-rapidapi-key": "c1878e1e15msh31897938498ae2cp1bd156jsn44c8a2dc1ea3",
+    	"x-rapidapi-key": "9fe8241a5amsh50ee664f06df7d9p19dae4jsne3ec44b9ef5e",
     	"x-rapidapi-host": "google-news13.p.rapidapi.com"
     }
     
